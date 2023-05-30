@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Catalog</string>
+    <string name="app_name">Financial assets</string>
     <string name="title_product_list">Products</string>
     <string name="title_favourite_list">Favourites</string>
     <string name="title_product_detail">Asset Detail</string>

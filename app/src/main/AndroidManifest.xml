@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="es.ulpgc.eite.cleancode.catalog">
+          package="es.ulpgc.eite.cleancode.financialassets">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".products.ProductListActivity"
+            android:name="es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,20 +21,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".product.ProductDetailActivity"
-            android:parentActivityName=".products.ProductListActivity"
+            android:name="es.ulpgc.eite.cleancode.financialassets.product.ProductDetailActivity"
+            android:parentActivityName="es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="es.ulpgc.eite.cleancode.catalog.products.ProductListActivity"/>
+                android:value="es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity"/>
         </activity>
         <activity
-            android:name=".favourites.FavouriteListActivity"
-            android:parentActivityName=".products.ProductListActivity"
+            android:name="es.ulpgc.eite.cleancode.financialassets.favourites.FavouriteListActivity"
+            android:parentActivityName="es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="es.ulpgc.eite.cleancode.catalog.products.ProductListActivity"/>
+                android:value="es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity"/>
         </activity>
     </application>
 
