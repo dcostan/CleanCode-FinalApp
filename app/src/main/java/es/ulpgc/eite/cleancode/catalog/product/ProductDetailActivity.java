@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ public class ProductDetailActivity
 
   ProductDetailContract.Presenter presenter;
 
+  Button favouriteButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,9 @@ public class ProductDetailActivity
     setContentView(R.layout.activity_product_detail);
     Toolbar toolbar = findViewById(R.id.detail_toolbar);
     setSupportActionBar(toolbar);
+    favouriteButton = findViewById(R.id.set_fav_button);
+
+    favouriteButton.setOnClickListener(v -> presenter.setFavouriteClicked());
 
     // Show the Up button and the title in the action bar
     ActionBar actionBar = getSupportActionBar();
@@ -69,24 +74,32 @@ public class ProductDetailActivity
     // deal with the data
     final ProductItem product = viewModel.product;
 
-    ActionBar actionBar = getSupportActionBar();
-    if (actionBar != null) {
-      actionBar.setDisplayHomeAsUpEnabled(true);
-      actionBar.setTitle(product.content);
-    }
-
     if (product != null) {
-      ((TextView) findViewById(R.id.product_type)).setText(product.type);
-      ((TextView) findViewById(R.id.product_isin)).setText(product.isin);
-      ((TextView) findViewById(R.id.product_currency)).setText(product.currency);
-      ((TextView) findViewById(R.id.product_max_spread)).setText(Double.toString(product.max_spread) + "%");
-      ((TextView) findViewById(R.id.product_value)).setText(Double.toString(product.value));
       runOnUiThread(new Runnable() {
         @Override
         public void run() {
+
+          ActionBar actionBar = getSupportActionBar();
+          if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(product.content);
+          }
+
           Glide.with(ProductDetailActivity.this)
                   .load(product.picture)
                   .into((ImageView) findViewById(R.id.product_image));
+
+          ((TextView) findViewById(R.id.product_type)).setText(product.type);
+          ((TextView) findViewById(R.id.product_isin)).setText(product.isin);
+          ((TextView) findViewById(R.id.product_currency)).setText(product.currency);
+          ((TextView) findViewById(R.id.product_max_spread)).setText(Double.toString(product.max_spread) + "%");
+          ((TextView) findViewById(R.id.product_value)).setText(Double.toString(product.value));
+
+          if(product.favourite)
+            ((Button) findViewById(R.id.set_fav_button)).setText(R.string.unset_favourite);
+          else
+            ((Button) findViewById(R.id.set_fav_button)).setText(R.string.set_favourite);
+
         }
       });
     }

@@ -10,6 +10,8 @@
     <string name="item_currency">Currency</string>
     <string name="item_max_spread">Maximum spread</string>
     <string name="item_value">Fund value</string>
+    <string name="set_favourite">Add favourite</string>
+    <string name="unset_favourite">Remove favourite</string>
 
 
 </resources>

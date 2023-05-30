@@ -19,10 +19,12 @@ interface ProductDetailContract {
     //void injectRouter(Router router);
 
     void fetchProductDetailData();
+    void setFavouriteClicked();
   }
 
   interface Model {
     void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, int id);
+    void setFavourite(RepositoryContract.SetFavouriteCallback callback, int id, boolean favurite);
   }
 
 //  interface Router {

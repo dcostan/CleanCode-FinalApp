@@ -26,13 +26,6 @@ public class ProductListModel implements ProductListContract.Model {
           repository.getFinancialAssetsList(callback);
       }
     });
-
-    repository.setFavourite(new RepositoryContract.SetFavouriteCallback() {
-      @Override
-      public void onFavouriteSetted(boolean error) {
-        Log.e(TAG, "Fav error: " + Boolean.toString(error));
-      }
-    }, 2, true);
   }
 
 }

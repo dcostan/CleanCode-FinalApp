@@ -161,5 +161,13 @@
                 android:maxLines="1" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/set_fav_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/set_favourite"
+            android:layout_marginTop="30dp" />
+
     </LinearLayout>
 </ScrollView>

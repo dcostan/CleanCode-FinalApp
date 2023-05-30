@@ -64,4 +64,16 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
     }, productId);
   }
 
+  @Override
+  public void setFavouriteClicked() {
+    model.setFavourite(new RepositoryContract.SetFavouriteCallback() {
+      @Override
+      public void onFavouriteSetted(boolean error) {
+        Log.e(TAG, "Setting favourite error: " + Boolean.toString(error));
+        if(!error) {
+          fetchProductDetailData();
+        }
+      }
+    }, state.product.id, !state.product.favourite);
+  }
 }
