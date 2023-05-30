@@ -1,0 +1,44 @@
+{
+  "assets": [
+    {
+      "id": 0,
+      "content": "Vanguard S&P 500",
+      "picture": "https://cdn.statcdn.com/Statistic/260000/262889-blank-754.png",
+      "type": "ETF",
+      "isin": "IE00B3XXRP09",
+      "currency": "USD",
+      "max_spread": 3.00,
+      "value": 1417491.53
+    },
+    {
+      "id": 1,
+      "content": "BlackRock EU Fund",
+      "picture": "https://cdn.statcdn.com/Statistic/1215000/1219510-blank-754.png",
+      "type": "Hedge Fund",
+      "isin": "XS2427362145",
+      "currency": "EUR",
+      "max_spread": 1.00,
+      "value": 59978.96
+    },
+    {
+      "id": 2,
+      "content": "iShares STOXX Europe",
+      "picture": "https://cdn.statcdn.com/Statistic/260000/261720-blank-754.png",
+      "type": "ETF",
+      "isin": "DE0002635307",
+      "currency": "EUR",
+      "max_spread": 1.00,
+      "value": 1405358.22
+    },
+    {
+      "id": 3,
+      "content": "Amundi World Energy",
+      "picture": "https://cdn.statcdn.com/Statistic/260000/261713-blank-754.png",
+      "type": "ETF",
+      "isin": "LU1681046006",
+      "currency": "EUR",
+      "max_spread": 2.00,
+      "value": 198966.88
+    }
+  ]
+}

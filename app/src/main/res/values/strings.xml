@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Catalog</string>
+    <string name="title_product_list">Products</string>
+    <string name="title_favourite_list">Favourites</string>
+    <string name="title_product_detail">Asset Detail</string>
+    <string name="item_content">Item Content</string>
+    <string name="item_infromation">ASSET INFORMATION</string>
+    <string name="item_type">Asset type</string>
+    <string name="item_isin">ISIN code</string>
+    <string name="item_currency">Currency</string>
+    <string name="item_max_spread">Maximum spread</string>
+    <string name="item_value">Fund value</string>
+
+
+</resources>
