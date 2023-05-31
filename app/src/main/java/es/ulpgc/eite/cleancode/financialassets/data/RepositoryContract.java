@@ -6,6 +6,9 @@ public interface RepositoryContract {
   interface CheckUserCallback {
     void onUserChecked(boolean valid);
   }
+  interface AddUserCallBack {
+    void onUserCreated();
+  }
   interface FetchCatalogDataCallback {
     void onCatalogDataFetched(boolean error);
   }
@@ -22,6 +25,7 @@ public interface RepositoryContract {
     void onFavouriteSetted(boolean error);
   }
   void checkUser(RepositoryContract.CheckUserCallback callback, UserItem user);
+  void addUser(RepositoryContract.AddUserCallBack callback, UserItem user);
   void loadCatalog(RepositoryContract.FetchCatalogDataCallback callback);
   void getFinancialAssetsList(RepositoryContract.GetFinancialAssetsListCallback callback);
   void getFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback);

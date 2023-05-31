@@ -1,12 +1,14 @@
 package es.ulpgc.eite.cleancode.financialassets.data;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "products")
+@Entity(tableName = "users")
 public class UserItem {
 
   @PrimaryKey
+  @NonNull
   public final String username;
   public final String password;
 

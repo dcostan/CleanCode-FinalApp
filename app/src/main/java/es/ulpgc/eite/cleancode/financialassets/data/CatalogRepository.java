@@ -56,10 +56,22 @@ public class CatalogRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        if(user.username.equals("a"))
+        UserItem dbUser = database.userDao().loadUser(user.username);
+        if(dbUser != null && user.password.equals(dbUser.password))
           callback.onUserChecked(true);
         else
           callback.onUserChecked(false);
+      }
+    });
+  }
+
+  @Override
+  public void addUser(final AddUserCallBack callback, UserItem user) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        database.userDao().addUser(user);
+        callback.onUserCreated();
       }
     });
   }
