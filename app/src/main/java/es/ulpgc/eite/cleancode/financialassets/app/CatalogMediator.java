@@ -4,10 +4,12 @@ import es.ulpgc.eite.cleancode.financialassets.favourites.FavouriteListState;
 import es.ulpgc.eite.cleancode.financialassets.login.LoginState;
 import es.ulpgc.eite.cleancode.financialassets.product.ProductDetailState;
 import es.ulpgc.eite.cleancode.financialassets.products.ProductListState;
+import es.ulpgc.eite.cleancode.financialassets.signup.SignupState;
 
 public class CatalogMediator {
 
   private LoginState loginState = new LoginState();
+  private SignupState signupState = new SignupState();
   private ProductListState productListState = new ProductListState();
   private FavouriteListState favouriteListState = new FavouriteListState();
   private ProductDetailState productDetailState = new ProductDetailState();
@@ -37,6 +39,7 @@ public class CatalogMediator {
 
 
   public LoginState getLoginState() { return loginState; }
+  public SignupState getSignupState() { return signupState; }
   public ProductListState getProductListState() {
     return productListState;
   }

@@ -17,6 +17,7 @@ import es.ulpgc.eite.cleancode.financialassets.login.LoginContract;
 import es.ulpgc.eite.cleancode.financialassets.login.LoginScreen;
 import es.ulpgc.eite.cleancode.financialassets.login.LoginActivity;
 import es.ulpgc.eite.cleancode.financialassets.products.ProductListActivity;
+import es.ulpgc.eite.cleancode.financialassets.signup.SignupActivity;
 
 public class LoginActivity
         extends AppCompatActivity implements LoginContract.View {
@@ -28,6 +29,7 @@ public class LoginActivity
     EditText usr;
     EditText pwd;
     Button loginButton;
+    Button signupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,10 @@ public class LoginActivity
         usr = findViewById(R.id.username);
         pwd = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
+        signupButton = findViewById(R.id.signup_button);
 
         loginButton.setOnClickListener(v -> presenter.loginClicked());
+        signupButton.setOnClickListener(v -> navigateToSignup());
 
         // Show the Up button and the title in the action bar
         ActionBar actionBar = getSupportActionBar();
@@ -69,6 +73,11 @@ public class LoginActivity
         });
     }
 
+    @Override
+    public void navigateToSignup() {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
     @Override
     public void navigateToProductList() {
         Intent intent = new Intent(this, ProductListActivity.class);

@@ -1,19 +1,17 @@
-package es.ulpgc.eite.cleancode.financialassets.login;
+package es.ulpgc.eite.cleancode.financialassets.signup;
 
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.financialassets.data.RepositoryContract;
 import es.ulpgc.eite.cleancode.financialassets.data.UserItem;
 
-interface LoginContract {
+interface SignupContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
     UserItem getCredentials();
-    void displayError();
-    void navigateToSignup();
-    void navigateToProductList();
+    void navigateBack();
   }
 
   interface Presenter {
@@ -21,16 +19,11 @@ interface LoginContract {
     void injectModel(Model model);
     //void injectRouter(Router router);
 
-    void loginClicked();
+    void signupClicked();
   }
 
   interface Model {
-    void checkUser(RepositoryContract.CheckUserCallback callback, UserItem user);
+    void addUser(RepositoryContract.AddUserCallBack callback, UserItem user);
   }
 
-//  interface Router {
-//
-//    //ProductItem getDataFromProductListScreen();
-//    Integer getDataFromProductListScreen();
-//  }
 }
