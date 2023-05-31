@@ -1,9 +1,11 @@
 package es.ulpgc.eite.cleancode.financialassets.login;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -50,6 +52,21 @@ public class LoginActivity
     @Override
     public UserItem getCredentials() {
         return new UserItem(usr.getText().toString(), pwd.getText().toString());
+    }
+
+    @Override
+    public void displayError() {
+        Context context = this;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Access denied");
+                builder.setMessage("Combination of username and password was not found");
+                builder.setNegativeButton("Close", (dialog, which) -> dialog.cancel());
+                builder.show();
+            }
+        });
     }
 
     @Override

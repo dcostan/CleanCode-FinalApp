@@ -65,8 +65,6 @@ public class ProductListActivity
 
     // do some work
     presenter.fetchProductListData();
-    Intent intent = new Intent(this, LoginActivity.class);
-    startActivity(intent);
   }
 
   public void navigateToFavouritesScreen() {

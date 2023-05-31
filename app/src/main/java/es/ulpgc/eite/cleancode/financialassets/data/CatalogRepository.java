@@ -56,7 +56,10 @@ public class CatalogRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        callback.onUserChecked(true);
+        if(user.username.equals("a"))
+          callback.onUserChecked(true);
+        else
+          callback.onUserChecked(false);
       }
     });
   }

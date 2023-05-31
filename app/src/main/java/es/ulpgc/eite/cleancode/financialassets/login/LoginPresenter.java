@@ -45,6 +45,8 @@ public class LoginPresenter implements LoginContract.Presenter {
       public void onUserChecked(boolean valid) {
         if(valid)
           view.get().navigateToProductList();
+        else
+          view.get().displayError();
       }
     }, user);
   }

@@ -11,6 +11,7 @@ interface LoginContract {
     void injectPresenter(Presenter presenter);
 
     UserItem getCredentials();
+    void displayError();
     void navigateToProductList();
   }
 
