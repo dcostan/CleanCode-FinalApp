@@ -52,6 +52,16 @@ public class CatalogRepository implements RepositoryContract {
   }
 
   @Override
+  public void checkUser(final CheckUserCallback callback, UserItem user) {
+    AsyncTask.execute(new Runnable() {
+      @Override
+      public void run() {
+        callback.onUserChecked(true);
+      }
+    });
+  }
+
+  @Override
   public void loadCatalog(final FetchCatalogDataCallback callback) {
 
     AsyncTask.execute(new Runnable() {

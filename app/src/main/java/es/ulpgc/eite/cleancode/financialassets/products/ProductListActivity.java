@@ -16,6 +16,7 @@ import androidx.core.app.NavUtils;
 import es.ulpgc.eite.cleancode.financialassets.R;
 import es.ulpgc.eite.cleancode.financialassets.data.ProductItem;
 import es.ulpgc.eite.cleancode.financialassets.favourites.FavouriteListActivity;
+import es.ulpgc.eite.cleancode.financialassets.login.LoginActivity;
 import es.ulpgc.eite.cleancode.financialassets.product.ProductDetailActivity;
 
 
@@ -64,6 +65,8 @@ public class ProductListActivity
 
     // do some work
     presenter.fetchProductListData();
+    Intent intent = new Intent(this, LoginActivity.class);
+    startActivity(intent);
   }
 
   public void navigateToFavouritesScreen() {

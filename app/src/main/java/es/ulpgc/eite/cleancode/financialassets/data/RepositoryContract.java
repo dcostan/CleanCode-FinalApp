@@ -3,6 +3,9 @@ package es.ulpgc.eite.cleancode.financialassets.data;
 import java.util.List;
 
 public interface RepositoryContract {
+  interface CheckUserCallback {
+    void onUserChecked(boolean valid);
+  }
   interface FetchCatalogDataCallback {
     void onCatalogDataFetched(boolean error);
   }
@@ -18,6 +21,7 @@ public interface RepositoryContract {
   interface SetFavouriteCallback {
     void onFavouriteSetted(boolean error);
   }
+  void checkUser(RepositoryContract.CheckUserCallback callback, UserItem user);
   void loadCatalog(RepositoryContract.FetchCatalogDataCallback callback);
   void getFinancialAssetsList(RepositoryContract.GetFinancialAssetsListCallback callback);
   void getFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback);
