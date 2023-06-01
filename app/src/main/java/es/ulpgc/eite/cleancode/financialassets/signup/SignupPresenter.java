@@ -39,15 +39,12 @@ public class SignupPresenter implements SignupContract.Presenter {
     Log.e(TAG, "signupClicked()");
 
     UserItem user = view.get().getCredentials();
-    /*model.checkUser(new RepositoryContract.CheckUserCallback() {
+    model.addUser(new RepositoryContract.AddUserCallBack() {
       @Override
-      public void onUserChecked(boolean valid) {
-        if(valid)
-          view.get().navigateToProductList();
-        else
-          view.get().displayError();
+      public void onUserCreated() {
+        view.get().navigateBack();
       }
-    }, user);*/
+    }, user);
   }
 
 }

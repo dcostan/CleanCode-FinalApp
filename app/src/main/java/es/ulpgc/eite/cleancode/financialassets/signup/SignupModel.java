@@ -10,19 +10,13 @@ public class SignupModel implements SignupContract.Model {
 
   private RepositoryContract repository;
 
-  /*
-  public ProductDetailModel() {
-
-  }
-  */
-
   public SignupModel(RepositoryContract repository) {
     this.repository = repository;
   }
 
   @Override
   public void addUser(RepositoryContract.AddUserCallBack callback, UserItem user) {
-    //repository.checkUser(callback, user);
+    repository.addUser(callback, user);
   }
 
 }

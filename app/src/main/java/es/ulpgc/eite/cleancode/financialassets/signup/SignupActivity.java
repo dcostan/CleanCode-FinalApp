@@ -39,6 +39,7 @@ public class SignupActivity
         // Show the Up button and the title in the action bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.title_signup));
         }
 
@@ -53,8 +54,7 @@ public class SignupActivity
 
     @Override
     public void navigateBack() {
-        /*Intent intent = new Intent(this, ProductListActivity.class);
-        startActivity(intent);*/
+        finish();
     }
 
     @Override
