@@ -29,6 +29,6 @@ public interface RepositoryContract {
   void loadCatalog(RepositoryContract.FetchCatalogDataCallback callback);
   void getFinancialAssetsList(RepositoryContract.GetFinancialAssetsListCallback callback);
   void getFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback, String username);
-  void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, int id);
+  void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, String username, int id);
   void setFavourite(RepositoryContract.SetFavouriteCallback callback, String username, int prodId, boolean favourite);
 }

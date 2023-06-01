@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.ulpgc.eite.cleancode.financialassets.database.CatalogDatabase;
+import es.ulpgc.eite.cleancode.financialassets.database.UserProductJoinDao;
 
 
 public class CatalogRepository implements RepositoryContract {
@@ -111,15 +112,18 @@ public class CatalogRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        callback.setFavouriteAssetsList(database.productDao().loadFavourites());
+        callback.setFavouriteAssetsList(database.userProductJoinDao().getFavouriteForUser(username));
       }
     });
   }
-  public void getFinancialAsset(final RepositoryContract.GetFinancialAssetCallback callback, final int id) {
+  public void getFinancialAsset(final RepositoryContract.GetFinancialAssetCallback callback, final String username, final int id) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        callback.setFinancialAsset(database.productDao().loadProduct(id));
+        ProductItem asset = database.productDao().loadProduct(id);
+        boolean favourite = database.userProductJoinDao().checkFavourite(username, id).size() > 0;
+        asset.favourite = favourite;
+        callback.setFinancialAsset(asset);
       }
     });
   }
@@ -127,11 +131,12 @@ public class CatalogRepository implements RepositoryContract {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
-        // Se una riga è aggiornata non c'è errore
-        if(database.productDao().setFavourite(prodId, favourite) == 1)
-          callback.onFavouriteSetted(false);
+        UserProductJoin upj = new UserProductJoin(username, prodId);
+        if(favourite)
+          database.userProductJoinDao().insert(upj);
         else
-          callback.onFavouriteSetted(true);
+          database.userProductJoinDao().delete(upj);
+        callback.onFavouriteSetted(false);
       }
     });
   }

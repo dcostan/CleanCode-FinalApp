@@ -15,7 +15,7 @@ public class ProductItem {
   public final String currency;
   public final Double max_spread;
   public final Double value;
-  public final boolean favourite;
+  public boolean favourite;
 
   public ProductItem(int id, String content, String picture, String type, String isin, String currency, Double max_spread, Double value, boolean favourite) {
     this.id = id;

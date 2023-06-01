@@ -20,8 +20,8 @@ public class ProductDetailModel implements ProductDetailContract.Model {
   }
 
   @Override
-  public void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, int id) {
-    repository.getFinancialAsset(callback, id);
+  public void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, String username, int id) {
+    repository.getFinancialAsset(callback, username, id);
   }
 
   public void setFavourite(RepositoryContract.SetFavouriteCallback callback, String username, int prodId, boolean favourite) {

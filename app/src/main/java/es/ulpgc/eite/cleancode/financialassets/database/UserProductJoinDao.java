@@ -18,7 +18,13 @@ public interface UserProductJoinDao {
     @Insert
     void insert(UserProductJoin userProductJoin);
 
+    @Delete
+    void delete(UserProductJoin userProductJoin);
+
     @Query("SELECT * FROM products INNER JOIN user_product_join ON products.id=user_product_join.productId WHERE user_product_join.userId=:userId")
     List<ProductItem> getFavouriteForUser(final String userId);
+
+    @Query("SELECT * FROM products INNER JOIN user_product_join ON products.id=user_product_join.productId WHERE user_product_join.userId=:userId AND user_product_join.productId = :prodId")
+    List<ProductItem> checkFavourite(final String userId, final int prodId);
 
 }

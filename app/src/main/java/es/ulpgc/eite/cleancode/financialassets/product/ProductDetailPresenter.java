@@ -61,7 +61,7 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
         state.product = asset;
         view.get().displayProductDetailData(state);
       }
-    }, productId);
+    }, mediator.getCurrentUser(), productId);
   }
 
   @Override
