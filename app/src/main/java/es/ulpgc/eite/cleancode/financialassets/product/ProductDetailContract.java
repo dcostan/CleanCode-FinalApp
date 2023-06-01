@@ -23,7 +23,7 @@ interface ProductDetailContract {
 
   interface Model {
     void getFinancialAsset(RepositoryContract.GetFinancialAssetCallback callback, int id);
-    void setFavourite(RepositoryContract.SetFavouriteCallback callback, int id, boolean favurite);
+    void setFavourite(RepositoryContract.SetFavouriteCallback callback, String username, int prodId, boolean favourite);
   }
 
 //  interface Router {

@@ -107,7 +107,7 @@ public class CatalogRepository implements RepositoryContract {
       }
     });
   }
-  public void getFavouriteAssetsList(final RepositoryContract.GetFavouriteAssetsListCallback callback) {
+  public void getFavouriteAssetsList(final RepositoryContract.GetFavouriteAssetsListCallback callback, String username) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
@@ -123,12 +123,12 @@ public class CatalogRepository implements RepositoryContract {
       }
     });
   }
-  public void setFavourite(final RepositoryContract.SetFavouriteCallback callback, final int id, final boolean favourite) {
+  public void setFavourite(final RepositoryContract.SetFavouriteCallback callback, final String username, final int prodId, final boolean favourite) {
     AsyncTask.execute(new Runnable() {
       @Override
       public void run() {
         // Se una riga è aggiornata non c'è errore
-        if(database.productDao().setFavourite(id, favourite) == 1)
+        if(database.productDao().setFavourite(prodId, favourite) == 1)
           callback.onFavouriteSetted(false);
         else
           callback.onFavouriteSetted(true);

@@ -24,7 +24,7 @@ public class ProductDetailModel implements ProductDetailContract.Model {
     repository.getFinancialAsset(callback, id);
   }
 
-  public void setFavourite(RepositoryContract.SetFavouriteCallback callback, int id, boolean favourite) {
-    repository.setFavourite(callback, id, favourite);
+  public void setFavourite(RepositoryContract.SetFavouriteCallback callback, String username, int prodId, boolean favourite) {
+    repository.setFavourite(callback, username, prodId, favourite);
   }
 }

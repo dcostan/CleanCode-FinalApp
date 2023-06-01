@@ -24,7 +24,7 @@ interface FavouriteListContract {
   }
 
   interface Model {
-    void fetchFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback);
+    void fetchFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback, String username);
   }
 
   /*

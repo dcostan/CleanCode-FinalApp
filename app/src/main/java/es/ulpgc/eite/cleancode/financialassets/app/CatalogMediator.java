@@ -14,7 +14,7 @@ public class CatalogMediator {
   private FavouriteListState favouriteListState = new FavouriteListState();
   private ProductDetailState productDetailState = new ProductDetailState();
 
-  //private ProductItem product;
+  private String currentUser;
   private Integer productId;
 
 
@@ -51,18 +51,13 @@ public class CatalogMediator {
     return productDetailState;
   }
 
-  /*
-  public ProductItem getProduct() {
-    ProductItem item = product;
-    //product = null;
-    return item;
+  public void setCurrentUser(String username) {
+    currentUser = username;
   }
 
-
-  public void setProduct(ProductItem item) {
-    product = item;
+  public String getCurrentUser() {
+    return currentUser;
   }
-  */
 
   public Integer getProductId() {
     Integer itemId = productId;

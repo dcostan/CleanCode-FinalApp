@@ -74,6 +74,6 @@ public class ProductDetailPresenter implements ProductDetailContract.Presenter {
           fetchProductDetailData();
         }
       }
-    }, state.product.id, !state.product.favourite);
+    }, mediator.getCurrentUser(), state.product.id, !state.product.favourite);
   }
 }

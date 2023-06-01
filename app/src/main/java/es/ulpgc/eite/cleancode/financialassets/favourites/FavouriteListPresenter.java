@@ -47,7 +47,7 @@ public class FavouriteListPresenter implements FavouriteListContract.Presenter {
         state.products = assets;
         view.get().displayProductListData(state);
       }
-    });
+    }, mediator.getCurrentUser());
 
   }
 

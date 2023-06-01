@@ -43,10 +43,12 @@ public class LoginPresenter implements LoginContract.Presenter {
     model.checkUser(new RepositoryContract.CheckUserCallback() {
       @Override
       public void onUserChecked(boolean valid) {
-        if(valid)
+        if(valid) {
+          mediator.setCurrentUser(user.username);
           view.get().navigateToProductList();
-        else
+        } else {
           view.get().displayError();
+        }
       }
     }, user);
   }

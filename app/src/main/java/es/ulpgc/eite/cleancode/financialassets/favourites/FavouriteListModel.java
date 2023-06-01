@@ -14,9 +14,9 @@ public class FavouriteListModel implements FavouriteListContract.Model {
     this.repository = repository;
   }
   @Override
-  public void fetchFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback) {
+  public void fetchFavouriteAssetsList(RepositoryContract.GetFavouriteAssetsListCallback callback, String username) {
     Log.e(TAG, "fetchFinancialAssetsList()");
-    repository.getFavouriteAssetsList(callback);
+    repository.getFavouriteAssetsList(callback, username);
   }
 
 }
