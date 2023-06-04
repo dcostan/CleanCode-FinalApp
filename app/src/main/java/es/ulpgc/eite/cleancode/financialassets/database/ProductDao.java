@@ -26,13 +26,7 @@ public interface ProductDao {
     @Query("SELECT * FROM products")
     List<ProductItem> loadProducts();
 
-    @Query("SELECT * FROM products WHERE favourite = 1")
-    List<ProductItem> loadFavourites();
-
     @Query("SELECT * FROM products WHERE id = :id LIMIT 1")
     ProductItem loadProduct(int id);
-
-    @Query("UPDATE products SET favourite = :favourite WHERE id = :id")
-    int setFavourite(int id, boolean favourite);
 
 }
